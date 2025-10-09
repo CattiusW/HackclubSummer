@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0763af1f-dfd9-4c91-a24f-2908a1e720e1"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Not A Number.dev</title>
@@ -9,13 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 <body>
 <div class="scroll-container">
   <section id="nan">
 	<h1 class="stagger-header"><span class="char">H</span><span class="char">i</span><span class="char">,</span><span class="char"> </span> <span class="char">I</span><span class="char">'</span><span class="char">m</span><span class="char"> </span> <span class="char">C</span><span class="char">a</span><span class="char">s</span><span class="char">s</span><span class="char" id="target-i">i</span><span class="char">u</span><span class="char">s</span><span class="char">.</span></h1>
 
-	 <a href="#projects" class="scroll-arrow">
+	 <a href="#projects" class="scroll-arrow" data-umami-event="Scroll Down to Projects">
       <i class="fas fa-arrow-down"></i>
     </a>
   </section>
@@ -27,53 +30,29 @@
     
     <div class="projects-box">
       <h2>async:</h2>
-      <p>A chat app written in node js, with AI, Gifs, Public + Private chats and Username + Password authentication. You can find its source <a href="https://github.com/cattiusw/async">here</a>. <i class="fa-brands fa-node-js"></i></p>
+      <p>A chat app written in node js, with AI, Gifs, Public + Private chats and Username + Password authentication. You can find its source <a href="https://github.com/cattiusw/async" data-umami-event="async GitHub Link Click">here</a>. <i class="fa-brands fa-node-js"></i></p>
       <h2>marianmills.com:</h2>
-      <p>A HTML, CSS & JS artist's portfolio website. You can see it <a href="https://marianmills.com">here</a>. <i class="fa-brands fa-html5"> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-square-js"></i></i></p>
+      <p>A HTML, CSS & JS artist's portfolio website. You can see it <a href="https://marianmills.com" data-umami-event="marianmills.com Link Click">here</a>. <i class="fa-brands fa-html5"> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-square-js"></i></i></p>
       <h2>This site!</h2>
     </div>
-    <a href="#contact" class="scroll-arrow">
+    <a href="#contact" class="scroll-arrow" data-umami-event="Scroll Down to Contact">
       <i class="fas fa-arrow-down"></i>
     </a>
   </section>
   <section id="contact" style="background-color:black;">
     <h2>Contact Me</h2>
     <div id='contact-buttons'>
-      <a href="https://github.com/cattiusw" target="_blank" class="contact-button">
+      <a href="https://github.com/cattiusw" target="_blank" class="contact-button" data-umami-event="GitHub Contact Button Click">
         <p><i class="fa-brands fa-github"></i> <span>GitHub</span></p>
       </a>
-      <a href="https://mailhide.io/e/PYSevtvr" class="contact-button">
+      <!-- To track clicks on mailto links with Umami, use the data-umami-event attribute -->
+      <a href="https://mailhide.io/e/PYSevtvr" class="contact-button" data-umami-event="Email Contact Button Click">
         <p><i class="fa-solid fa-envelope"></i> <span>Email</span> <p> 
       </a>
     </div>
 
   </section>
-  <script>document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.stagger-header');
-  const characters = header.querySelectorAll('.char');
-  const targetI = document.getElementById('target-i');
-  
-  // Start the staggered animation on page load
-  header.classList.add('animated');
 
-  // Stagger the animation delay for each character
-  characters.forEach((char, index) => {
-    char.style.animationDelay = `${index * 0.04}s`; // Adjust as needed
-  });
-
-  // Wait for the last character's animation to finish
-  const lastCharIndex = characters.length - 1;
-  characters[lastCharIndex].addEventListener('animationend', () => {
-    
-    // Replace the 'i' with the special 'ı'
-    targetI.textContent = 'ı';
-
-    // Apply the bouncing and gradient styles
-    targetI.classList.add('bounce-dot-container');
-
-  }, { once: true }); // Ensure the event only fires once
-});
-</script>
 </div>
 </body>
 </html>
