@@ -50,7 +50,32 @@
         <p><i class="fa-solid fa-envelope"></i> <span>Email</span> <p> 
       </a>
     </div>
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.stagger-header');
+  const characters = header.querySelectorAll('.char');
+  const targetI = document.getElementById('target-i');
+  
+  // Start the staggered animation on page load
+  header.classList.add('animated');
 
+  // Stagger the animation delay for each character
+  characters.forEach((char, index) => {
+    char.style.animationDelay = `${index * 0.04}s`; // Adjust as needed
+  });
+
+  // Wait for the last character's animation to finish
+  const lastCharIndex = characters.length - 1;
+  characters[lastCharIndex].addEventListener('animationend', () => {
+    
+    // Replace the 'i' with the special 'ı'
+    targetI.textContent = 'ı';
+
+    // Apply the bouncing and gradient styles
+    targetI.classList.add('bounce-dot-container');
+
+  }, { once: true }); // Ensure the event only fires once
+});
+</script>
   </section>
 
 </div>
