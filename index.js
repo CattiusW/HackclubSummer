@@ -13,29 +13,7 @@ updatePageTitle();
 hash()
 function hash() {
     const params = new URLSearchParams(window.location.search);
-    if (params.has('purple')) {
-        document.documentElement.setAttribute('data-theme', 'dark');document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-        if (link.href.includes('/styles/dark.css')) {
-                link.href = '/styles/purple.css';
-        }
-        let purple = document.getElementById('purple');
-        purple.textContent = "Dark";
-        purple.href = "/";
-    });
-
-    }
-    // Alert first if present
-    if (params.has('alert')) {
-        alert(decodeURIComponent(params.get('alert')));
-    }
-
-    
-    // Execute JS if present
-    if (params.has('js')) {
-        eval(decodeURIComponent(params.get('js'))+ ";redirect();");
-    }else{
-        redirect();
-    }
+    redirect()
     function redirect() {
         if (params.has('url')) {
             let url = params.get('url')
